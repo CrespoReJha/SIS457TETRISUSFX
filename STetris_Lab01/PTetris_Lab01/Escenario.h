@@ -14,28 +14,24 @@ private:
 	int puntaje;
 	int mejorPuntaje;
 	int nivel;
-	Tablero tablero;
+	//Tablero tablero;
 
 public:
-	Escenario(){
-		nombre = "nombre de escenario predeterminado";
-		puntaje = 0;
-		alto = 6; 
-		ancho = 7; //ancho y alto con valores cualquiera
-		imagenFondo = "imagen del fondo del escenario predeterminada";
-		mejorPuntaje = 0;
-		nivel = 0;
-	}
-
+	Escenario(string _nombre, int _alto, int _ancho, string _imagenFondo, int _puntaje, int _mejorPuntaje, int _nivel/*, Tablero _tablero*/);
+	
 	void incrementarPuntaje(int _puntaje, int _filasEliminadas);
 	void actualizarMejorPuntaje(int _mejorPuntaje, int _puntajeActual);
 	int incrementarNivel(int _puntaje);
 
-
+	//Gettters
+	string getNombre() { return nombre; }
+	string getImagenFondo() { return imagenFondo; }
+	int getPuntaje() { return puntaje; }
+	int getMejorPuntaje() { return mejorPuntaje; }
+	int getNivel() { return nivel; }
 
 	void setNombre(string _nombre) { nombre = _nombre; }
-	string getNombre() { return nombre; }
 
-	void setTablero(Tablero _tablero) { tablero = _tablero; }
-	Tablero getTablero() { return tablero; }
+	//void setTablero(Tablero _tablero) { tablero = _tablero; }
+	//Tablero getTablero() { return tablero; }
 };

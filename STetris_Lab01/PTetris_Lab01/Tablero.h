@@ -7,20 +7,12 @@ private:
 	int anchoTiles; //definimos el ancho del tablero respecto a la cantidad de tiles que los bloques podran ocupar horintalmente
 	int altoTiles; //definimos el ancho del tablero respecto a la cantidad de tiles que los bloques podran ocupar verticalmente
 	int numeroFilasEliminadas;
-	int posicionVerticalfilaMasAltaOcupada; //fila mas alta tenga un tile ocupado
+	int posicionVerticalFilaMasAltaOcupada; //fila mas alta tenga un tile ocupado
 	vector<bool> filaActual;
-	Bloque bloque;
+	//Bloque bloque;
 
 public:
-	Tablero() {
-		numeroFilasEliminadas = 0;
-		anchoTiles = 5; //ponemos un valor cualquiera predeterminado para el ancho del tablero
-		altoTiles = 7; //ponemos un valor cualquiera predeterminado el alto del tablero
-		posicionVerticalfilaMasAltaOcupada = 0;
-		filaActual = { false,false,false,false,false };
-
-	}
-
+	Tablero(int _anchoTiles, int _altoTiles, int _numeroFilasEliminadas, int _posicionVerticalFilaMasAltaOcupada, vector<bool> _filaActual/*, Bloque _bloque */ ); //constructor
 	bool filaLlena(vector<bool> _filaActual);
 	int eliminarFila(bool _filaLlena);
 	void bajarFilas(bool _filaAbajoVacia);
@@ -31,6 +23,9 @@ public:
 
 	//Metodos accesores
 
-	int getNumeroFilasEliminadas() { return numeroFilasEliminadas; }
+	int getFilasEliminadas() { return numeroFilasEliminadas; }
+	vector<bool> getFilaActual() { return filaActual; }
+	int getAltoTiles() { return altoTiles; }
+	int getPosicionVerticalFilaMasAltaOcupada() { return posicionVerticalFilaMasAltaOcupada; }
 };
 

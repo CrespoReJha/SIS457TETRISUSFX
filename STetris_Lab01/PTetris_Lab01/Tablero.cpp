@@ -2,6 +2,16 @@
 #include <iostream>
 using namespace std;
 
+Tablero::Tablero(int _anchoTiles, int _altoTiles, int _numeroFilasEliminadas, int _posicionVerticalFilaMasAltaOcupada, vector<bool> _filaActual/*, Bloque _bloque*/)
+{
+	anchoTiles = _anchoTiles;
+	altoTiles = _altoTiles;
+	numeroFilasEliminadas = _numeroFilasEliminadas;
+	posicionVerticalFilaMasAltaOcupada = _posicionVerticalFilaMasAltaOcupada;
+	filaActual = _filaActual;
+	//bloque = _bloque;
+}
+
 bool Tablero::filaLlena(vector<bool> _espaciosOcupados)
 {
 	cout << "funcion que verifique si una fila esta llena" << endl;
